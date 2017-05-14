@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8 character">
+    <title>{% block title %}{{titre_chapitre}}{% endblock %}</title>
+
+
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <link href="{{url_for ('static',filename='css/bootstrap.css')}}" rel="stylesheet" media="screen">
+    <link href="{{url_for ('static',filename='css/custom.css')}}" rel="stylesheet" media="screen">
+    <link href="{{url_for ('static',filename='css/bootstrap-theme.css')}}" rel="stylesheet" media="screen">
+    <link href="{{url_for ('static',filename='css/product.css')}}" rel="stylesheet" media="screen">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{url_for ('static',filename='js/bootstrap.min.js')}}"></script>
+    {% endblock %}
+</head>
+
+
+<body background="{{url_for ('static',filename='images/HTS-robot.jpg')}}"  background-size: 100%>
+
+
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default trans" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="/chapitres">Higth Troughtput Screening</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/home">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="/chapitres">Chapitres</a>
+                    </li>
+                    <li>
+                        <a href="/ressources">References</a>
+                    </li>
+                    <li>
+                        <a href="/video">Video</a>
+                    </li>
+                    <li>
+                        <a href="/questions">Questions?</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="container-fluid opak">
+
+        <!-- block here -->
+        {% block content %}
+        {% endblock content%}
+
+    </div>
+
+
+</body>
+
+
+</html>

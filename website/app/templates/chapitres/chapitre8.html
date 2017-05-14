@@ -1,0 +1,31 @@
+{% extends "chapitre.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block contenu %}
+
+<h2 class="intro-text text-center"><strong>HTS-corrector Démonstration</strong></h2>
+<br>
+
+<h3>3. Méthode de correction par normalisation des puits</h3>
+
+<p>
+    L’option “Well correction” normalise les valeurs expérimentales de chaque plaque selon la méthode expliquée dans la première partie. Pour procéder à cette correction, nous réutilisons le fichier produit par l’évaluation de l’arrière-plan des données originelles et appliquons la correction par normalisation des puits. On effectue ensuite une analyse de distribution des hits sur les données corrigées (ci-dessous à droite) afin de le comparer à l’analyse de la distribution des hits des données originale (ci-dessous à gauche). Ainsi, on dénote bien que cela ne soit pas parfait une homogénéisation du nombre de hits  par rangée/colonne et des scores sur la carte dans les données corrigées par rapport aux données.
+</p>
+
+
+<br>
+<img src="{{url_for ('static',filename='Figures/Selection_011.png')}}" class="center-block">
+<br>
+
+<p>
+    Un test de chi-carré fait sur les données modifiées avec la méthode de correction par normalisation des puits montre que les données ont bien été corrigées et que les erreurs systématiques ont bien été retirées de notre jeu de donnée.
+</p>
+
+
+<br>
+<img src="{{url_for ('static',filename='Figures/Selection_012.png')}}" class="center-block">
+<br>
+
+
+{% endblock contenu %}

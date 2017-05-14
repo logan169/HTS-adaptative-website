@@ -1,0 +1,55 @@
+
+body{
+font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h3{
+    text-decoration: underline;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.box{
+    margin-bottom: 20px;
+    padding: 30px 15px;
+    background: rgba(255,255,255,0.8);
+    height:auto !important;
+}
+
+.youtubeframe2{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -99;
+
+    box-sizing: border-box;
+    display: block;
+    box-sizing: border-box;
+}
+
+.youtubeframe{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -99;
+    pointer-events: none;
+    box-sizing: border-box;
+    display: block;
+    box-sizing: border-box;
+}
+
+.ligne{
+    line-heigth:10px;
+    vertical-align:middle;
+}
+
+.text{
+    font-size: 1.3em !important;
+    line-height: 1.4;
+    display: inline-block;
+}
+
+.bttn{
+    text-align: right;
+    padding-bottom:15px;
+}

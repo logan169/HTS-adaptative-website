@@ -1,0 +1,71 @@
+{% extends "skeleton.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="box ">
+        <div class="row">
+            <div class="col-lg-12">
+                    <h2 class="intro-text text-center"> A propos des auteurs </h2>
+                <hr>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="row text-center">
+                    <img src="{{url_for ('static',filename='Figures/antoine.jpg')}}" class="photo">
+                    <h2>Antoine Dallaire</h2>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <p>Antoine initialement en biologie à décidé d'entamer une reconversion professionnelle en informatique. Il a débuté un bac en génie logiciel à l'ETS jusqu'à ce que son amour pour la biologie le rattrape. Mettant à profit ses connaissances en informatique, il effectue actuellement un Dess en bioinformatique à l'UQAM. </p>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row text-center">
+                    <img src="{{url_for ('static',filename='images/21c9ac4.jpg')}}" class="photo">
+                    <h2>Logan Schwartz</h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <p>Logan est un techo-geek entrain de technologie. A l'origine dans la biologie, son amour pour l'informatique l'a poussé à flirter avec la bio-informatique. Il travail actuellement à la plateforme de bioinformatique de l'institut de recherche en immunologie et cancerologie (Iric).</p>
+            </div>
+        </div>
+</div>
+
+<div class="row">
+    <div class="box">
+        <div class="col-lg-12">
+            <hr>
+            <h2 class="intro-text text-center">Une question? contactez nous! </h2>
+            <hr>
+            <form role="form"  method="POST">
+                <div class="row">
+                    <div class="form-group col-lg-4">
+                        <label>Nom</label>
+                        <input name='nom' type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <label>Email</label>
+                        <input name= 'mail' type="email" class="form-control">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-lg-12">
+                        <label>Message</label>
+                        <textarea name='message' class="form-control" rows="6"></textarea>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <input type="hidden" name="save" value="contact">
+                        <button type="submit" name='envoi' class="btn btn-default">Envoyer</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

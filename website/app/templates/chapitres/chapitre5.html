@@ -1,0 +1,49 @@
+{% extends "chapitre.html" %}
+{% block contenu %}
+<!--put your html here-->
+
+<h2 class="intro-text text-center"><strong>Correction des erreurs et sélection des hits</strong></h2>
+<br>
+
+<h3>L’arrière-plan</h3>
+
+
+<p>
+    Suite à normalisation et l’élimination des données aberrantes de chacune des plaques, on peut procédé à la correction de l’arrière-plan. Il est généralement défini comme étant la moyenne de l’activité des données normalisée et est calculé selon la formule suivante.
+</p>
+<br>
+<br>
+<img src="http://chart.googleapis.com/chart?cht=tx&chl=%5Cchi_r%5E2%20%3D%20%5Cdisplaystyle%20%5Csum_%7Bj%3D1%7D%5E%7BN_c%7D%20%5Cfrac%20%7B(x_%7Brj%7D-E)%5E2%7D%7BE%7D" class="center-block formule">
+<div class="text-center">
+    <p>où 	 zi=arrière plan au puits i</p>
+    <p>où N = nombre de plaques</p>
+    <p><img src="http://chart.googleapis.com/chart?cht=tx&chl=%5Chat%7Bx%7D_%7Bi%2Cj%7D">
+        = la valeur normalisé du puits i de la plaque j
+    </p>
+</div>
+
+<p>La valeur zi est alors soustraite à la valeur xi,j suite à cette correction une sélection de hits peut être faite. </p>
+
+<br>
+
+<h3>Les puits</h3>
+
+<p>
+    Pour la correction des puits, on fait une approximation, selon la méthode des moindres carrés, pour chacun des puits de l’ensemble des plaques de l’essai. Cette approximation met en évidence la tendance ( ascendante ou descendante) qui a lieu pour chaque puits de chaque plaque (figure 3). On soustrait alors cette tendance de chacun des puits, et on procède de nouveau à un centrage-réduction de chacun des puits (Kevorkov & Makarenkov, 2005). Les hits sont alors prêts à être sélectionnés selon la formule mentionnée précédemment.
+</p>
+
+<br>
+<img src="{{url_for ('static',filename='Figures/figure03.png')}}" class="center-block figure">
+<p class="center-block">Figure 1. Processus standard de découverte de médicement. Le HTS a lieu dans le Primary Screen, Secondary Screen  et Counter Screen. ( tirée de Malo et al. 2006)</p>
+<br>
+
+<p>
+    Bien que les deux méthodes de correction soient capables de retirer les erreurs systématiques, il a été démontré (Hastie et al. 2001) qu’il est préférable d’utiliser une correction au niveau des puits plutôt qu’au niveau de l’arrière-plan.  La méthode de normalisation des puits serait plus efficace pour minimiser le nombre de faux positifs et devrait par conséquent être privilégiée (Gagarin et al., 2006). Une analyse faite par Makarenkov et al. en 2006 sur une simulation de données aléatoires contenant un bruit constant soutient bien cette thèse.
+</p>
+
+
+<br>
+<img src="{{url_for ('static',filename='Figures/Selection_006.png')}}" class="center-block figure">
+<br>
+
+{% endblock contenu %}

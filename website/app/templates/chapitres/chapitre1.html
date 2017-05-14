@@ -1,0 +1,22 @@
+{% extends "chapitre.html" %}
+{% block contenu %}
+<!--put your html here-->
+
+<h2 class="intro-text text-center"><strong>HTS et sources d’erreurs</strong></h2>
+<br>
+<p>
+    Le HTS est la première étape dans le processus de découverte du médicament (figure 1). Il se fait généralement  sur des plaques contenant 96, 384, 1536 ou 3456 puits. La sélection de molécules d’intérêt (hits) se fait en fonction de l’activité moléculaire dans chacun des puits. Les molécules montrant une activité sont sélectionnées pour un second criblage, tandis que les molécules inactives sont écartées.
+</p>
+<br>
+<img src="{{url_for ('static',filename='Figures/figure01.png')}}" class="center-block figure">
+<p class="center-block">Figure 1. Processus standard de découverte de médicement. Le HTS a lieu dans le Primary Screen, Secondary Screen  et Counter Screen. ( tirée de Malo et al. 2006)</p>
+<br>
+<p>
+    La distinction entre les molécules actives et inactives doit donc être la plus nette possible pour minimiser les faux positifs et faux négatifs. Un faux positif engendrerait des pertes de temps et d’argent sur les analyses ultérieures tandis qu’un faux négatif écarterait une molécule ayant un potentiel thérapeutique et ferait perdre à la fois des profits potentiels et des espoirs de guérisons pour les gens malades. Dans tous les cas, il faut minimiser les deux types d’erreurs.
+</p>
+
+<p>
+    Les deux types d’erreurs mentionnées précédemment peuvent être de nature aléatoire ou de nature systématique. Les erreurs aléatoires sont difficiles, voire impossibles à détecter et corriger, il s’agit généralement de bruit de fond altérant les informations relatives à une plaque ou à un puits. Inversement, les erreurs systématiques sont généralement détectables et des corrections peuvent être apportée aux erreurs qu’ils causent, il s’agit de facteurs généralement constants d’un puits à l’autre ou d’une plaque à l’autre. Voyons maintenant les différentes méthodes statistiques appliquées aux données brutes avant que les hits soient sélectionnés.
+</p>
+
+{% endblock contenu %}

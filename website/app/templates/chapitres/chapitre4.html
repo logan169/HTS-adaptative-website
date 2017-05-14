@@ -1,0 +1,37 @@
+{% extends "chapitre.html" %}
+{% block contenu %}
+
+<h2 class="intro-text text-center"><strong>Correction des erreurs et sélection des hits</strong></h2>
+<br>
+
+<h3>Détection d’erreur systématique</h3>
+
+<p>
+    Avant de corriger des erreurs sur un ensemble de données, il faut d’abord s’assurer que cet ensemble comporte réellement des erreurs. Appliquer des corrections sur des plaques ne comportant pas d’erreurs pourrait introduire un biais systématique dans les données( Makarenkov et al., 2007). Pour détecter la présence d’erreurs dans un ensemble de données de criblage, une multitude de tests peuvent être appliqués. Le ² de Pearson (qualité d’ajustement), le t-test de Welch ou un test de Kolmogorov-Smirnov précédé d’une transformation de Fourier discrète sont tout utilisable, cependant Dragiev et al. (2011) on démontré que l’utilisation du t-test de Welch est généralement supérieure aux autres méthode pour le HTS.
+</p>
+<br>
+<ul>
+    <li>
+        Le t-test  de Welch
+        <img src="http://chart.googleapis.com/chart?cht=tx&chl=%5Chat%7Bx%7D_%7Bij%7D%20%3D%20%5Cfrac%7Bx_%7Bij%7D-%5Cmu_%7Bneg%7D%7D%7B%5Cmu_%7Bpos%7D-%5Cmu_%7Bneg%7D%7D" class="center-block formule">
+    </li>
+
+    <br>
+
+    <li >
+        Le test de chi-carré de qualité d’ajustement pour tester la présence d’erreur systématique associée à la rangée, colonne ou puits sur l’ensemble de l’essai  E correspond au nombre de hits sur l’ensemble de la distribution de hits divisée par le nombre de puits  (NcNr).
+        <br>
+        <br>
+        <img src="http://chart.googleapis.com/chart?cht=tx&chl=%5Cchi_r%5E2%20%3D%20%5Cdisplaystyle%20%5Csum_%7Bj%3D1%7D%5E%7BN_c%7D%20%5Cfrac%20%7B(x_%7Brj%7D-E)%5E2%7D%7BE%7D" class="center-block formule">
+        <br>
+        <img src="http://chart.googleapis.com/chart?cht=tx&chl=%5Cchi_c%5E2%20%3D%20%5Cdisplaystyle%20%5Csum_%7Bi%3D1%7D%5E%7BN_r%7D%20%5Cfrac%20%7B(x_%7Bic%7D-E)%5E2%7D%7BE%7D" class="center-block formule">
+        <br>
+        <img src="http://chart.googleapis.com/chart?cht=tx&chl=%5Cchi%5E2%20%3D%20%5Cdisplaystyle%20%5Csum_%7Bi%3D1%7D%5E%7BN_r%7D%5Csum_%7Bj%3D1%7D%5E%7BN_c%7D%20%5Cfrac%20%7B(x_%7Bij%7D-E)%5E2%7D%7BE%7D" class="center-block formule">
+    </li>
+
+    <br>
+
+</ul>
+
+
+{% endblock contenu %}

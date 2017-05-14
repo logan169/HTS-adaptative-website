@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8 character">
+    <!--<title>The Wellness Garden </title>-->
+    <title>{% block title %}{{titre_chapitre}}{% endblock %}</title>
+
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <link href="{{url_for ('static',filename='css/bootstrap.css')}}" rel="stylesheet" media="screen">
+    <!--<link href="{{url_for ('static',filename='css/custom.css')}}" rel="stylesheet" media="screen">-->
+    <link href="{{url_for ('static',filename='css/bootstrap-theme.css')}}" rel="stylesheet" media="screen">
+    <link href="{{url_for ('static',filename='css/home.css')}}" rel="stylesheet" media="screen">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{url_for ('static',filename='js/bootstrap.min.js')}}"></script>
+
+</head>
+
+<div class="visible-xs hidden-md hidden-sm hidden-lg">
+    <body background="{{url_for ('static',filename='images/HTS-robot.jpg')}}"  background-size: 100%>
+</div>
+
+<div class="visible-lg visible-sm visible-md hidden-xs">
+    <body background="{{url_for ('static',filename='images/HTS-robot.jpg')}}"  background-size: 100% onload="alert('Une version mobile est disponible pour ce site,n\'hésitez pas à jeter un coup d\'oeil via votre tablette où votre cellulaire')">
+</div>
+
+
+
+
+<div class="container-fluid">
+    <div class="box">
+        <div class="row ligne">
+            <div class="col-md-1"></div>
+            <div class="col-md-8"><h3>Bienvenue sur notre page web consacrée à l'HTS:</h3><hr></div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-8 text">
+                <p>Le criblage à haut débit ou High-throughput screening (HTS) est une technique expérimentale principalement utilisée dans la découverte de médicaments. Cette méthode utilise plusieurs technologies de pointe tant au niveau de la robotique, pour manipuler les solutions et les différentes plaques d’essai, qu’au niveau logiciel lors de l’analyse des résultats. Cette technologie permet d’identifier très rapidement quelles molécules parmi  des millions pourraient potentiellement interagir dans certaines voies biochimiques.</p>
+
+            </div>
+            <div class="col-md-3 pull-right">
+                <div class="bttn ">
+                    <a href="/chapitres" class="btn btn-primary btn-sm">Continuez vers le site <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+<div class='youtubeframe hidden-xs'>
+    <iframe frameborder="0" width="100%" height="100%"  src="https://www.youtube.com/embed/xakRli5vxd4?wmode=opaque&listType=playlist&list=PLqbZWhGF9vKb2D1YYROPQWNaeDr5JjTXf&loop=1&autoplay=1&rel=0&showinfo=0&controls=0&autohide=1&mute=1"frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+
+</body>
+<script></script>

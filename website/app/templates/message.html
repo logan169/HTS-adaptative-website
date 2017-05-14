@@ -1,0 +1,18 @@
+{% extends "skeleton.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<!-- Display flashed messages with categories -->
+{% with msgs = get_flashed_messages(with_categories=true) %}
+{% if msgs %}
+{%- for category, msg in msgs %}
+<div class="alert alert-info">
+    {{category.capitalize()}}: {{ msg }}
+</div>
+{% endfor -%}
+{% endif %}
+{% endwith %}
+
+{% endblock content %}

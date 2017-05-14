@@ -1,0 +1,58 @@
+{% extends "skeleton.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<div class="row">
+
+
+    <div class="row center-block">
+        <div class="text-center" >
+            <h2 class="intro-text visible-md visible-lg"><strong>Liste des chapitres</strong></h2>
+        </div>
+    </div>
+
+
+
+    <nav class="navbar navbar-default trans text-center" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand"  href="/chapitres">Liste des chapitres</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+
+            <div class="collapse-navbar-collapse " id="navbar-collapse-2">
+                <ul class="nav navbar-nav ">
+                    {% for title in navbar%}
+                    <li>
+                        <a href="/chapter/{{title}}">{{title}}</a>
+
+                    </li>
+                    {%endfor%}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div>
+
+{% block chapitre %}
+{% endblock chapitre %}
+
+<div class="text-center">
+    <br>
+    <a href={{buttonLast}} class="btn btn-primary btn-md"><span class="glyphicon glyphicon-chevron-left"></span>Chapitre précédent </a>
+    <a href={{buttonNext}} class="btn btn-primary btn-md">Chapitre suivant<span class="glyphicon glyphicon-chevron-right"></span> </a>
+</div>
+</div>
+</div>
+{% endblock content %}

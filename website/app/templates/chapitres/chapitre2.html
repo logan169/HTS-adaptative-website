@@ -1,0 +1,39 @@
+{% extends "chapitre.html" %}
+{% block contenu %}
+<!--put your html here-->
+
+<h2 class="intro-text text-center"><strong>Correction des erreurs et sélection des hits</strong></h2>
+<br>
+
+<p>
+    La sélection des hits se fait selon une formule simple &#956;&plusmn;c&sdot;&#963; où &#956; est la moyenne d’activité, &#963; l’écart-type de cette activité et c une constante (généralement 1, 2 ou 3) choisie pour discriminer les résultats. Il faut, avant de débuter le criblage, utiliser un bon design expérimental. Suite au criblage, des méthodes de normalisation sont appliquées aux données, ensuite des tests de détection d’erreurs sont effectués. Advenant le cas qu’une erreur soit détectée les corrections appropriées sont apportées. Finalement la sélection des hits est faite.
+</p>
+
+<h3>
+    Design expérimental
+</h3>
+
+<p>
+    Afin d’identifier convenablement un hit, il faut minimalement que la plaque ait des contrôles positifs et négatifs qui serviront de référence (figure 2). Hormis l’utilisation de contrôles, un autre élément primordial pour faciliter la détection et l’élimination d’erreurs systématiques est la randomisation. Elle se caractérise par le positionnement aléatoire de chacun des tests dans la plaque, ce faisant, elle minimise les chances que la mesure de l’activité d’un composé soit affectée par des facteurs associés à certains puits de la plaque (i.e background, erreurs systématiques).
+</p>
+
+<br>
+<img src="{{url_for ('static',filename='Figures/figure02.png')}}" class="center-block figure">
+<p class="text-block">
+    Figure 2. Différentes dispositions de puits de contrôles positifs et négatifs sur une plaque de 96 puits. (Tirée de Malo et al. 2006)
+</p>
+<br>
+
+<p>
+    En plus des contrôles et la randomisation, il est pertinent d’ajouter des réplicats pour chacun composés étudiés. Les réplicats apportent une plus grande précision sur l’activité du composé et permettent d’estimer la variance de cette activité. Ils facilitent donc les analyses statistiques ultérieures. La réduction de l’incertitude associée à un nombre de réplicat n par rapport à une mesure unique est définie par la formule suivante :
+</p>
+
+<br>
+<img src="http://chart.googleapis.com/chart?cht=tx&chl=100%5Ctimes%20%5C(1-%5Cfrac%7B1%7D%7B%5Csqrt%7Bn%7D%7D%5C)%25" class="center-block formule">
+<br>
+
+<p>
+    Ainsi l’utilisation de deux, trois ou quatre réplicats réduit respectivement l’incertitude sur la mesure de 29,3%, 42,3% et 50%. Généralement, on choisi le nombre de réplicat selon la variabilité attendue en fonction les étapes expérimentales précédent le criblage. Dans certain cas, il peut-être extrêmement coûteux de faire des réplicats, il y a alors des méthodes de correction adaptée qui consiste à ne répliquer qu’un sous-ensemble des échantillons sur la plaque ( Murie et al. 2013).
+</p>
+
+{% endblock contenu %}

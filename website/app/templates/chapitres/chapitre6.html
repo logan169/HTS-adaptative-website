@@ -1,0 +1,54 @@
+{% extends "chapitre.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block contenu %}
+
+<h2 class="intro-text text-center"><strong>HTS-corrector Démonstration</strong></h2>
+<br>
+
+<h3>1. Chargement des données et répartition de l’arrière-plan</h3>
+
+<p>
+    ‘HTS-corrector‘ est un programme permettant d’analyser et de détecter les erreurs systématiques dans des jeux de données de ‘HTS’. Dans cette partie, nous allons faire une démonstration des fonctionnalités de ce programme en utilisant l’ensemble de données ‘Harvard164.mtx’. Le but de l’exercice étant de corriger les données afin de minimiser les erreurs systématiques. Le programme ‘HTS-corrector’ et les données ‘Harvard164.mtx’ sont disponibles <a href='http://www.info2.uqam.ca/~makarenkov_v/HTS/home.php'>ici</a>.
+</p>
+<p>
+    Au chargement du fichier ‘Harvard164.mtx’, deux fenêtres apparaissent. La première représente, sur une carte, la répartition des scores pour chaque puits de chaque plaque, tandis que la seconde représente la variation du score d’un puits sur l’ensemble des plaques analysées.
+</p>
+
+<br>
+<img src="{{url_for ('static',filename='Figures/Selection_004.png')}}" class="center-block">
+<br>
+
+<p>
+    Un test rapide de chi-carré (onglet ‘Analysis’) sur l’analyse de dispersion des hits sur les données de départ retourne un message d’erreur indiquant la présence d’erreurs systématiques et nous invitant à faire une correction.
+</p>
+
+<br>
+<img src="{{url_for ('static',filename='Figures/Selection_005.png')}}" class="center-block">
+<br>
+
+<p>
+    Pour ce faire, ‘HTS-corrector’ offre entre autre les deux méthodes de correction mentionnées précédemment, la correction de l’arrière plan et la correction par puits. Dans cette démonstration nous allons corriger le jeux de données avec ces deux méthodes de correction et analyser leurs effets sur les données.
+</p>
+
+<p>
+    Avant de poursuivre l’analyse du jeu de donnée , il faut retirer les données aberrantes. Un seuil c  maximal peut être entré dans l’onglet ‘Analysis’ des options afin de retirer toutes les valeurs supérieures àcoù correspond à l’écart-type de l’ensemble des mesures, dans notre cas nous utiliserons la valeur par défaut, soit 3 .
+</p>
+
+<p>
+    Ensuite, nous mesurons l’arrière-plan à la surface des plaques en utilisant l’option ‘Background Evaluation’ située dans l’onglet ‘Analysis’. La répartition de l’arrière-plan présent sur nos plaques est un facteur capital à considérer dans l’analyse des résultats de ‘HTS’. Si en théorie, le nombre puits présentant un hit par plaques est indépendant de la localisation de ces puits. Dans la réalité, certains puits présentent un taux de hits bien supérieur à la moyenne à cause de la présence d’erreurs systématiques.
+</p>
+
+
+<p>
+    L’analyse de l’évaluation et de l’approximation de l’arrière plan dans ‘HTS-corrector’ produit les fichiers contenant l’information nécessaire pour utiliser les outils de correction du logiciel. Ainsi, on obtient la vue suivante où la matrice à droite sous forme de carte représente l’arrière plan en fonction des puits sur une échelle de couleur allant du bleu (valeur de l’arrière plan négative causée par l’effet de bord) à rouge (valeur de l’arrière plan positive). Les histogrammes présentent la répartition de l’arrière plan en fonction des colonnes (histogramme à gauche en haut) et des rangées (histogramme à gauche en bas).
+</p>
+
+
+<br>
+<img src="{{url_for ('static',filename='Figures/Selection_007.png')}}" class="center-block">
+<br>
+
+
+{% endblock contenu %}

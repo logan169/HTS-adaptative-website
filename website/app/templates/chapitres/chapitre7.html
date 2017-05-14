@@ -1,0 +1,41 @@
+{% extends "chapitre.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block contenu %}
+
+<h2 class="intro-text text-center"><strong>HTS-corrector Démonstration</strong></h2>
+<br>
+
+<h3>2. Méthode de correction par retrait de l’arrière-plan</h3>
+
+<p>
+    Bien qu’il ne soit pas recommandé d’effectuer directement des corrections à partir de la méthode de correction par retrait de l’arrière-plan à cause des propriétés statistiques associées aux polynômes (Hastie et al., 2001), ‘HTS-corrector’ offre tout de même cette possibilité. L’option “Remove background” permet de soustraire la valeur de l’arrière-plan mesuré précédemment pour chaque puits dans le jeu de données originel.
+</p>
+
+<br>
+<img src="{{url_for ('static',filename='Figures/Selection_008.png')}}" class="center-block">
+<br>
+
+<p>
+    À partir d’une analyse de la répartition de l’arrière-plan sur ce fichier de données corrigées, nous pouvons comparer la répartition de l’arrière-plan entre le jeu de données originel (ci-dessous en haut) et corrigé (présenté ci-dessous en bas).  En comparant les cartes de répartition de l’arrière-plan et les histogrammes des deux captures d’écrans, on note une forte chute et une homogénéisation de la variation de l’arrière-plan dans les données corrigées.
+</p>
+
+<br>
+<div class="row">
+    <img src="{{url_for ('static',filename='Figures/Selection_007.png')}}" class="center-block"> <br> <img src="{{url_for ('static',filename='Figures/Selection_009.png')}}" class="center-block">
+</div>
+<br>
+
+<p>
+    Un test de chi² fait sur les données corrigées via la méthode de correction par retrait de l’arrière-plan montre qu’il y a toujours des erreurs systématiques  malgré la correction appliquée.
+</p>
+
+
+<br>
+<img src="{{url_for ('static',filename='Figures/Selection_010.png')}}" class="center-block">
+<br>
+
+
+
+{% endblock contenu %}
