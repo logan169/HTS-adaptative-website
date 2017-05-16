@@ -1,6 +1,6 @@
 # Adaptative website on high-throughput screening
 
-This website was done in the context of a course during the DESS formation in bioinformatics. It describe how high-throughput screening (HTS) works and how we used it to find new potentials drugs. The website is adaptative and was written in python2 using Bootstrap, Jinja2, Flask and Flask-mail library (for the contact view).
+This website was done in the context of a course during the DESS formation in bioinformatics. It describes how high-throughput screening (HTS) works and how we used it to find new potentials drugs. The website is adaptative and was written in python2 using Bootstrap, Jinja2, Flask and Flask-mail library (for the contact view).
 
 #### Dependancies
 - Python 2
@@ -12,7 +12,7 @@ This website was done in the context of a course during the DESS formation in bi
 ### Initialization
 
 #### To launch the server (Back-end)
-After installing dependencies, and editing mail account information in config.py, type the following commands from 'egn_server' folder:
+After installing dependencies and editing mail account information in config.py, type the following commands from 'egn_server' folder:
 
         $ chmod +x run.py
         $ ./run.py
